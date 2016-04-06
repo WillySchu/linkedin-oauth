@@ -48,7 +48,7 @@ passport.deserializeUser(function(user, done) {
   done(null, user)
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   res.locals.user = req.user
   next()
 })
