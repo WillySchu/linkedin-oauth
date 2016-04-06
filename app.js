@@ -37,7 +37,7 @@ passport.use(new LinkedInStrategy({
   scope: ['r_emailaddress', 'r_basicprofile'],
   state: true,
 }, (accessToken, refreshToken, profile, done) => {
-  done(null, {id: profile.id, displayName: profile.displayName})
+  done(null, {id: profile.id, displayName: profile.displayName, token: accessToken})
 }));
 
 passport.serializeUser(function(user, done) {
